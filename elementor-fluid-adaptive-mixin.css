@@ -1,0 +1,169 @@
+/*
+|--------------------------------------------------------------------------
+| Elementor Fluid Adaptive Mixin
+| Автор: Сергей Солошенко (RuCoder)
+| Описание: Универсальная система плавной адаптивности размеров
+| Работает на clamp() без медиазапросов
+|--------------------------------------------------------------------------
+*/
+
+/* Базовые переменные экрана */
+:root{
+  --fluid-min-screen:320;
+  --fluid-max-screen:1920;
+}
+
+/* Универсальный миксин-класс */
+.fluid{
+  --fluid-min:0;
+  --fluid-max:0;
+  --fluid-prop:font-size;
+}
+
+/* Генератор свойства */
+.fluid{
+  font-size:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+/* Модификаторы свойств */
+.fluid-padding{
+  padding:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+.fluid-margin{
+  margin:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+.fluid-gap{
+  gap:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+.fluid-radius{
+  border-radius:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+/*
+|--------------------------------------------------------------------------
+| Примеры использования в Elementor
+|--------------------------------------------------------------------------
+|
+| Заголовок:
+| class="fluid"
+| style="--fluid-min:18; --fluid-max:48;"
+|
+| Padding блока:
+| class="fluid-padding"
+| style="--fluid-min:20; --fluid-max:80;"
+|
+| Отступы колонок:
+| class="fluid-gap"
+| style="--fluid-min:10; --fluid-max:40;"
+|
+*/
+
+/* ======================================================================== */
+/* ============================== ENGLISH ================================= */
+/* ======================================================================== */
+
+/*
+|--------------------------------------------------------------------------
+| Elementor Fluid Adaptive Mixin
+| Author: Sergey Soloshenko (RuCoder)
+| Description: Universal fluid adaptive system
+| Works with clamp() without media queries
+|--------------------------------------------------------------------------
+*/
+
+/* Screen variables */
+:root{
+  --fluid-min-screen:320;
+  --fluid-max-screen:1920;
+}
+
+/* Base mixin class */
+.fluid{
+  --fluid-min:0;
+  --fluid-max:0;
+  --fluid-prop:font-size;
+}
+
+/* Property generator */
+.fluid{
+  font-size:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+/* Property modifiers */
+.fluid-padding{
+  padding:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+.fluid-margin{
+  margin:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+.fluid-gap{
+  gap:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+.fluid-radius{
+  border-radius:clamp(
+    calc(var(--fluid-min)*1px),
+    calc(var(--fluid-min)*1px + (var(--fluid-max) - var(--fluid-min)) * ((100vw - var(--fluid-min-screen)*1px) / (var(--fluid-max-screen) - var(--fluid-min-screen)))),
+    calc(var(--fluid-max)*1px)
+  );
+}
+
+/*
+|--------------------------------------------------------------------------
+| Usage examples in Elementor
+|--------------------------------------------------------------------------
+|
+| Heading:
+| class="fluid"
+| style="--fluid-min:18; --fluid-max:48;"
+|
+| Block padding:
+| class="fluid-padding"
+| style="--fluid-min:20; --fluid-max:80;"
+|
+| Column gaps:
+| class="fluid-gap"
+| style="--fluid-min:10; --fluid-max:40;"
+|
+*/
